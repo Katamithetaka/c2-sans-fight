@@ -139,23 +139,31 @@
                         </action>
                         <action id="0" name="Call function" sid="121948490218354" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}96{###}0{###}&quot;Normal&quot;{###}&quot;MenuModeNormal&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}96{###}1{###}&quot;Normal&quot;{###}&quot;MenuModeNormal&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="574106720171711" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}128{###}1{###}&quot;Practice&quot;{###}&quot;MenuModePractice&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}128{###}2{###}&quot;Practice&quot;{###}&quot;MenuModePractice&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="304790185942551" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}160{###}2{###}&quot;Endless&quot;{###}&quot;MenuModeEndless&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}160{###}3{###}&quot;Endless&quot;{###}&quot;MenuModeEndless&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="326311762535984" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}192{###}3{###}&quot;Single attack&quot;{###}&quot;MenuModeSingle&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}192{###}4{###}&quot;Single attack&quot;{###}&quot;MenuModeSingle&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="516406951993025" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}224{###}4{###}&quot;Custom attack&quot;{###}&quot;MenuModeCustom&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}224{###}5{###}&quot;Custom attack&quot;{###}&quot;MenuModeCustom&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="793968458660402" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}256{###}0{###}&quot;No Hit&quot;{###}&quot;MenuModeNoHit&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="962875513612819" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}288{###}6{###}&quot;Practice No Hit&quot;{###}&quot;MenuModePracticeNoHit&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -486,6 +494,10 @@
                         <condition id="-2" name="On start of layout" sid="8676844751034461" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="329054169877226" type="System">
+                            <param id="0" name="Variable">MaxHP</param>
+                            <param id="1" name="Value">92</param>
+                        </action>
                         <action id="-9" name="Set value" sid="7389657786042543" type="System">
                             <param id="0" name="Variable">HP</param>
                             <param id="1" name="Value">MaxHP</param>
@@ -680,6 +692,54 @@
                         </action>
                         <action id="-6" name="Scroll to Y" sid="8533637664891725" type="System">
                             <param id="0" name="Y">MenuItem.Y - 16</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="912713364591081">
+                    <conditions>
+                        <condition id="0" name="On function" sid="908951064175572" type="Function">
+                            <param id="0" name="Name">&quot;MenuModeNoHit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="103159654735378" type="System">
+                            <param id="0" name="Variable">SimulatorMode</param>
+                            <param id="1" name="Value">MODE_NORMAL</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="107509715271185" type="System">
+                            <param id="0" name="Variable">MaxHP</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="417560509026538" type="System">
+                            <param id="0" name="Variable">HP</param>
+                            <param id="1" name="Value">MaxHP</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="945428335336204" type="System">
+                            <param id="0" name="Layout">BattleScreen</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="359519445391149">
+                    <conditions>
+                        <condition id="0" name="On function" sid="561447737617640" type="Function">
+                            <param id="0" name="Name">&quot;MenuModePracticeNoHit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="645366861999924" type="System">
+                            <param id="0" name="Variable">SimulatorMode</param>
+                            <param id="1" name="Value">MODE_PRACTICE</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="102469647440636" type="System">
+                            <param id="0" name="Variable">MaxHP</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="925044525933471" type="System">
+                            <param id="0" name="Variable">HP</param>
+                            <param id="1" name="Value">MaxHP</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="102405413527563" type="System">
+                            <param id="0" name="Layout">BattleScreen</param>
                         </action>
                     </actions>
                 </event-block>

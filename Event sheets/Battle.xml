@@ -8341,6 +8341,11 @@
                             <param id="1" name="Comparison">5</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="499874215782531" type="System">
+                            <param id="0" name="Variable">SimulatorMode</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">MODE_PRACTICE</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="3459561075160849" type="PlayerHeart">
@@ -8916,7 +8921,49 @@
                                         <condition id="-8" name="Compare two values" sid="908913099483133" type="System">
                                             <param id="0" name="First value">HP - KR</param>
                                             <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Second value">PracticeTargetTest</param>
+                                            <param id="2" name="Second value">0.65 * MaxHP</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="385599985398910">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="524581322234996" type="SansLegs">
+                                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">22</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="325676678809995" type="SansLegs">
+                                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                                    <param id="1" name="Value">22</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="189038966594761">
+                                            <conditions>
+                                                <condition id="-1" name="Every tick" sid="198629089899494" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="726604368094586" type="System">
+                                                    <param id="0" name="Variable">Failed</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="616579381246618" type="Function">
+                                                    <param id="0" name="Name">&quot;EndAttack&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="192078305020122">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="465625406472119" type="System">
+                                            <param id="0" name="Variable">HP</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -8959,5 +9006,9 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="451334455092874">
+            <conditions />
+            <actions />
+        </event-block>
     </events>
 </c2eventsheet>
